@@ -2,7 +2,23 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Agenda_Lucas.App">
+    
+    <!--Mudando a cor da navbar-->
     <Application.Resources>
+        
+        <ResourceDictionary>
+            <!--Nós estamos especificando os parametros de recurso do nosso projeto
+            O primeiro foi o parametro de cor, onde também estamos especificando a cor primaria -->
+            <Color x:Key="Primary">transparent</Color>
+            <!--TargetType especifica qual estilo vou manipular-->
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="BarTextColor" Value="Black" />
+            </Style>
+
+        </ResourceDictionary>
+
 
     </Application.Resources>
+    
 </Application>
