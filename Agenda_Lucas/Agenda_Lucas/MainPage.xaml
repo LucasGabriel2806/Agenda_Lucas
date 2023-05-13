@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Agenda_Lucas.MainPage">
+
+    <Grid>
+        <StackLayout>
+            <!-- Titulo -->
+            <StackLayout Padding="40" VerticalOptions="Start" HorizontalOptions="Center">
+                <Label Text="LOGIN" FontSize="Title" TextColor="Black" FontAttributes="Bold"/>
+            </StackLayout>
+
+
+            <!-- Tela de login -->
+            <StackLayout VerticalOptions="Center">
+                <Frame BackgroundColor="Transparent" Margin="20">
+                    <StackLayout>
+                        <Label Text="E-mail" FontSize="Body" TextColor="Black" HorizontalOptions="Start"/>
+                        <Entry x:Name="TXTEmail" Keyboard="Email" ReturnType="Next"
+                           ClearButtonVisibility="WhileEditing"/>
+                        <Label Text="Senha" FontSize="Body" TextColor="Black" HorizontalOptions="Start"/>
+                        <Entry x:Name="TXTSenha" Keyboard="Default" ReturnType="Done" IsPassword="True"
+                           ClearButtonVisibility="WhileEditing" />
+                    </StackLayout>
+                </Frame>
+                <Button x:Name="BTNLogar" Text="Logar" BackgroundColor="Black" TextColor="White"
+                    CornerRadius="20" HorizontalOptions="Center"/>
+                <Button x:Name="BTNCriar" Text="Não tem uma conta? Criar uma conta."
+                    FontAttributes="Italic" TextTransform="None"
+                    BackgroundColor="Transparent" TextColor="Gray" 
+                    CornerRadius="20" HorizontalOptions="Center"
+                        
+                        />
+            </StackLayout>
+        </StackLayout>
+
+        <!-- Botão de "Sobre" -->
+        <StackLayout VerticalOptions="End">
+            <Button x:Name="BTNSobre" Text="Sobre"
+                    FontAttributes="Italic" TextTransform="None"
+                    BackgroundColor="Transparent" TextColor="Gray" 
+                    CornerRadius="20" HorizontalOptions="Center"/>
+
+        </StackLayout>
+
+        
+        <!--BoxView é uma tela que cria uma sombra negra sempre que o nosso código estiver verificando
+        usuário e senha, e o ActivityIndicator é uma rodinha que gira na tela indicando ao usuário
+        que a informação está sendo processada. Esses dois elementos são o motivo de usarmos Grid.-->
+        <!--Quando não definimos a GridColumns e Rows, a grid funcionará como um StackLayout,
+        A diferença é que eu consigo colocar meu BoxView Em cima da tela completamente, e o activity também-->
+        <BoxView x:Name="BVTelaPreta" Color="Black" Opacity="0.5" IsVisible="false"/>
+        <ActivityIndicator x:Name="ACTRoda" Color="white" IsVisible="false" IsRunning="False" Scale="0.2"/>
+    </Grid>
+
+
+
+
+
+</ContentPage>
