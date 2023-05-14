@@ -50,9 +50,12 @@
         usuário e senha, e o ActivityIndicator é uma rodinha que gira na tela indicando ao usuário
         que a informação está sendo processada. Esses dois elementos são o motivo de usarmos Grid.-->
         <!--Quando não definimos a GridColumns e Rows, a grid funcionará como um StackLayout,
-        A diferença é que eu consigo colocar meu BoxView Em cima da tela completamente, e o activity também-->
+        A diferença é que eu consigo colocar meu BoxView Em cima da tela completamente, e o activity também.
+        Usamos ele para que o usuário não mecha em nenhum componente indesejável durante consulta do banco,
+        que causaria a ocorrencia de erros/bugs.-->
         <BoxView x:Name="BVTelaPreta" Color="Black" Opacity="0.5" IsVisible="false"/>
         <ActivityIndicator x:Name="ACTRoda" Color="white" IsVisible="false" IsRunning="False" Scale="0.2"/>
+        <!--IsRunning é a propriedade que liga e desliga o movimento de giro-->
     </Grid>
 
 

@@ -11,15 +11,40 @@ namespace Agenda_Lucas
 {
     public partial class MainPage : ContentPage
     {
+        bool carregando;
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        public void TelaCarregamento()
+        {
+            
+                
+            if (carregando)
+            {
+                BVTelaPreta.IsVisible = false;
+                ACTRoda.IsVisible = false;
+                ACTRoda.IsRunning = false;
+
+                carregando = false;
+            }
+            else
+            {
+                BVTelaPreta.IsVisible = true;
+                ACTRoda.IsVisible = true;
+                ACTRoda.IsRunning = true;
+
+                carregando = true;
+            }
+            
         }
 
         private async void BTNLogar_Clicked(object sender, EventArgs e)
         {
             try
             {
+                TelaCarregamento();
                 //var que vai receber o valor da classe
                 //logar vai receber todos os métodos que tem o ServicosUser
                 var logar = new ServicosUser();
@@ -31,14 +56,19 @@ namespace Agenda_Lucas
                 {
                     await DisplayAlert("Sucesso", "Usuário logado", "OK");
                     Navigation.PushAsync(new Contatos());
-                }else
+
+                    TelaCarregamento();
+                }
+                else
                 {
                     await DisplayAlert("Falha", "Usuário e senha não correspondem", "OK");
+                    TelaCarregamento();
                 }
 
             } catch {
 
                 await DisplayAlert("Falha", "Ocorreu um erro!", "OK");
+                TelaCarregamento();
 
             }
 
