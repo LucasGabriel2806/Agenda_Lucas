@@ -8,13 +8,34 @@
              x:Class="Agenda_Lucas.Contatos">
 
     <!--NavigationPage.HasBackButton="False" Desabilita a Setinha pra voltar uma pagina
-    NavigationPage.HasNavigationBar="False" Tira a NavigationBar-->
+    NavigationPage.HasNavigationBar="False" Tira a NavigationBar
+    itemssource é a fonte de dados
+    Contatos é o nome da classe que tá o modelo dos nossos contatos.
+    Nesse momento, Binding tá pegando o modelo, pegando o padrão que vai ser
+    utilizado no CollectionView-->
     <ContentPage Title="Contatos">
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <CollectionView x:Name="CVLista" Margin="10" 
+                            HorizontalOptions="CenterAndExpand"
+                            ItemsSource="{Binding Contatos}">
+                <CollectionView.ItemTemplate>
+                    <!--ItemTemplate é um modelinho que ele vai seguir pra construir 
+                    os dados.
+                    DataTemplate: todo modelo de layout(objeto) que eu escrever aqui, 
+                    ele vai replicar linha por linha-->
+                    <DataTemplate>
+                        <Frame BackgroundColor="white" BorderColor="Black"
+                               HasShadow="False" CornerRadius="5">
+                            <Label Text="{Binding Nome}" TextColor="Black" 
+                                   VerticalOptions="Center" HorizontalOptions="Center"/>
+                        </Frame>
+                    </DataTemplate>
+
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+        </ScrollView>
     </ContentPage>
 
     <ContentPage Title="Detalhes">
@@ -25,12 +46,112 @@
         </StackLayout>
     </ContentPage>
 
+    <!--################################################## CADASTRAR ##################################################-->
     <ContentPage Title="Cadastrar">
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+        <ScrollView>
+            <Grid>
+                <StackLayout VerticalOptions="Start" Padding="30">
+                    <Label Text="Cadastrar"
+                       FontSize="Title" TextColor="Black"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+                    <Frame BorderColor="Black" CornerRadius="10"
+                       Margin="0,20">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0" 
+                            Text="Nome: " TextColor="Black" FontAttributes="Bold"
+                               HorizontalOptions="Start" VerticalOptions="Center" />
+                            <Entry x:Name="TXTNome" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"/>
+
+                            <Label Grid.Row="1" Grid.Column="0" 
+                            Text="Telefone 1 " TextColor="Black" FontAttributes="Bold"
+                               HorizontalOptions="Start" VerticalOptions="Center" />
+                            <Entry x:Name="TXTTel1" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"/>
+
+                            <Label Grid.Row="2" Grid.Column="0" 
+                            Text="Telefone 2 " TextColor="Black" FontAttributes="Bold"
+                               HorizontalOptions="Start" VerticalOptions="Center" />
+                            <Entry x:Name="TXTTel2" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"/>
+
+                            <Label Grid.Row="3" Grid.Column="0" 
+                            Text="E-mail: " TextColor="Black" FontAttributes="Bold"
+                               HorizontalOptions="Start" VerticalOptions="Center" />
+                            <Entry x:Name="TXTEmail" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"/>
+
+                            <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4"
+                            Text="Endereço " TextColor="Black" FontAttributes="Italic"
+                               HorizontalOptions="Start" VerticalOptions="Center" />
+
+                            <Label Grid.Row="5" Grid.Column="0" 
+                            Text="CEP: " TextColor="Black" FontAttributes="Bold"
+                               HorizontalOptions="Start" VerticalOptions="Center" />
+                            <Entry x:Name="TXTCep" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2"
+                               Unfocused="TXTCep_Unfocused" />
+
+                            <Label Grid.Row="6" Grid.Column="0" 
+                            Text="Logradouro: " TextColor="Black" FontAttributes="Bold"
+                               HorizontalOptions="Start" VerticalOptions="Center" />
+                            <Entry x:Name="TXTLogradouro" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3"/>
+
+                            <Label Grid.Row="7" Grid.Column="0" 
+                            Text="Nº: " TextColor="Black" FontAttributes="Bold"
+                               HorizontalOptions="Start" VerticalOptions="Center" />
+                            <Entry x:Name="TXTNumero" Grid.Row="7" Grid.Column="1" />
+                            <Label Grid.Row="7" Grid.Column="2" 
+                            Text="Compl.: " TextColor="Black" FontAttributes="Bold"
+                               HorizontalOptions="Start" VerticalOptions="Center" />
+                            <Entry x:Name="TXTComplemento" Grid.Row="7" Grid.Column="3" />
+
+                            <Label Grid.Row="8" Grid.Column="0" 
+                            Text="Bairro: " TextColor="Black" FontAttributes="Bold"
+                               HorizontalOptions="Start" VerticalOptions="Center" />
+                            <Entry x:Name="TXTBairro" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="3"/>
+
+                            <Label Grid.Row="9" Grid.Column="0" 
+                            Text="Cidade: " TextColor="Black" FontAttributes="Bold"
+                               HorizontalOptions="Start" VerticalOptions="Center" />
+                            <Entry x:Name="TXTCidade" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="3"/>
+
+                            <Label Grid.Row="10" Grid.Column="0" 
+                            Text="UF " TextColor="Black" FontAttributes="Bold"
+                               HorizontalOptions="Start" VerticalOptions="Center" />
+                            <Entry x:Name="TXTUF" Grid.Row="10" Grid.Column="1" />
+
+                        </Grid>
+                    </Frame>
+
+                    <Button x:Name="BTNSalvar" Text="Salvar"
+                        BackgroundColor="Black" TextColor="White"
+                        HorizontalOptions="CenterAndExpand" CornerRadius="20"
+                        Clicked="BTNSalvar_Clicked" />
+                    <Button x:Name="BTNLimpar" Text="Limpar"
+                        BackgroundColor="Transparent" TextColor="Red"
+                        HorizontalOptions="CenterAndExpand" CornerRadius="20"
+                        Clicked="BTNLimpar_Clicked"/>
+
+                </StackLayout>
+            </Grid>
+        </ScrollView>
     </ContentPage>
 
 
