@@ -7,7 +7,7 @@
         <Grid>
             <StackLayout>
                 <!-- Titulo -->
-                <StackLayout Padding="80" VerticalOptions="Start" HorizontalOptions="Center">
+                <StackLayout Padding="10" VerticalOptions="Start" HorizontalOptions="Center">
                     <Label Text="CRIAR ACESSO" FontSize="Title" TextColor="Black" FontAttributes="Bold"/>
                 </StackLayout>
 
@@ -28,11 +28,13 @@
                         </StackLayout>
                     </Frame>
                     <Button x:Name="BTNCriarAcesso" Text="Criar" BackgroundColor="Black" TextColor="White"
-                    CornerRadius="20" HorizontalOptions="Center"/>
+                    CornerRadius="20" HorizontalOptions="Center"
+                            Clicked="BTNCriarAcesso_Clicked"/>
                     <Button x:Name="BTNCancelar" Text="Cancelar"
                     FontAttributes="Italic" TextTransform="None"
                     BackgroundColor="Transparent" TextColor="Red" 
-                    CornerRadius="20" HorizontalOptions="Center"/>
+                    CornerRadius="20" HorizontalOptions="Center"
+                            Clicked="BTNCancelar_Clicked"/>
                 </StackLayout>
             </StackLayout>
 

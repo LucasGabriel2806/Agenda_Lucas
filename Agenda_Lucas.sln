@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agenda_Lucas.Android", "Agenda_Lucas\Agenda_Lucas.Android\Agenda_Lucas.Android.csproj", "{94759A95-A4A7-4969-9BCF-74FA77596898}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agenda_Lucas", "Agenda_Lucas\Agenda_Lucas\Agenda_Lucas.csproj", "{E43A34FF-1612-4B2B-B6A1-9EC3BA34EE6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Agenda_Lucas", "Agenda_Lucas\Agenda_Lucas\Agenda_Lucas.csproj", "{E43A34FF-1612-4B2B-B6A1-9EC3BA34EE6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

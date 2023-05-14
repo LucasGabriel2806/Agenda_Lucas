@@ -25,13 +25,13 @@
                     </StackLayout>
                 </Frame>
                 <Button x:Name="BTNLogar" Text="Logar" BackgroundColor="Black" TextColor="White"
-                    CornerRadius="20" HorizontalOptions="Center"/>
+                    CornerRadius="20" HorizontalOptions="Center"
+                        Clicked="BTNLogar_Clicked"/>
                 <Button x:Name="BTNCriar" Text="Não tem uma conta? Criar uma conta."
                     FontAttributes="Italic" TextTransform="None"
                     BackgroundColor="Transparent" TextColor="Gray" 
                     CornerRadius="20" HorizontalOptions="Center"
-                        
-                        />
+                    Clicked="BTNCriar_Clicked" />
             </StackLayout>
         </StackLayout>
 
@@ -40,7 +40,8 @@
             <Button x:Name="BTNSobre" Text="Sobre"
                     FontAttributes="Italic" TextTransform="None"
                     BackgroundColor="Transparent" TextColor="Gray" 
-                    CornerRadius="20" HorizontalOptions="Center"/>
+                    CornerRadius="20" HorizontalOptions="Center"
+                    Clicked="BTNSobre_Clicked"/>
 
         </StackLayout>
 
