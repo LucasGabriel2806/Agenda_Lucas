@@ -41,6 +41,8 @@ namespace Agenda_Lucas
 
         }
 
+        
+
         private async void BTNCriarAcesso_Clicked(object sender, EventArgs e)
         {
             TelaCarregamento();
@@ -52,6 +54,20 @@ namespace Agenda_Lucas
                 return;
                 //return: vai sair da operação, não vai continuar mesmo que tenha mais código 
             }
+
+            var login = new ServicosUser();
+            //await aguarda a consulta na internet, pra receber o resultado, meu código não
+            //pode prosseguir se não receber o resultado se é verdadeiro ou falso
+            bool loginduplicado = await login.VerificarDuplicado(TXTCriarEmail.Text);
+
+            if (loginduplicado)
+            {
+                await DisplayAlert("Falha", "Esse login já existe!", "OK");
+
+                TelaCarregamento();
+                return;
+            }
+
             try
             {
                 var acesso = new ServicosUser();

@@ -7,7 +7,7 @@
     <Grid>
         <StackLayout>
             <!-- Titulo -->
-            <StackLayout Padding="40" VerticalOptions="Start" HorizontalOptions="Center">
+            <StackLayout Padding="10, 30, 10, 40" VerticalOptions="Start" HorizontalOptions="Center">
                 <Label Text="LOGIN" FontSize="Title" TextColor="Black" FontAttributes="Bold"/>
             </StackLayout>
 

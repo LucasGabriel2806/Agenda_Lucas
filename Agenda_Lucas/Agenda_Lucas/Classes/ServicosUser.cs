@@ -74,7 +74,7 @@ namespace Agenda_Lucas.Classes
              * vou especificar daonde eu vou puxar os parametros pra buscar,
              * no nosso caso nossas variaveis que criam a tabela la, que ta 
              * na classe Usuarios.
-             * .Where(): usamos pra localizar login e senha.
+             * .Where(): usamos pra localizar login e senha(fazemos uma busca).
              * u é uma variável que vai fazer a busca do usuario e senha, é o
              * que vai ser atribuida esse valor 
              */
@@ -88,6 +88,20 @@ namespace Agenda_Lucas.Classes
                 .FirstOrDefault();
             //se o código acima der certo, consultar vai ter qualquer valor
             //não interessa qual. vai ser verdadeiro se consultar for != null
+            return consultar != null;
+        }
+
+        public async Task<bool> VerificarDuplicado(string email)
+        {
+            //"Usuarios" é a tabela no Firebase
+            //<Usuarios> é a classe
+            var consultar = (await Cliente.Child("Usuarios")
+                .OnceAsync<Usuarios>()) 
+                .Where(u => u.Object.Usuario == email)
+                .FirstOrDefault();
+
+            //Vai retornar o consultar como verdadeiro se ele for != nulo,
+            //que significa que já existe um usuario criado
             return consultar != null;
         }
 
