@@ -55,6 +55,10 @@ namespace Agenda_Lucas
                 if (verificarlogin)
                 {
                     await DisplayAlert("Sucesso", "Usuário logado", "OK");
+
+                    //Aqui não precisa pular a linha, o importante é não esquecer do ;
+                    TXTEmail.Text = string.Empty; TXTSenha.Text = string.Empty;
+
                     Navigation.PushAsync(new Contatos());
 
                     TelaCarregamento();
