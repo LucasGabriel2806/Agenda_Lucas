@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace Agenda_Lucas
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Contatos : ContentPage
+    public partial class Contatos : TabbedPage
     {
         public Contatos()
         {
